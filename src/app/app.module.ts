@@ -8,14 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule } from'@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 
 import { FooterComponent } from './components/templates/cabecalho/footer/footer.component';
 import { HeaderComponent } from './components/templates/cabecalho/header/header.component';
@@ -80,7 +78,7 @@ registerLocaleData(localePt);
     CompraDeleteComponent,
     CompraUpdateComponent,
     CompraReadComponent,
-    CompraTabelaComponent
+    CompraTabelaComponent,
   ],
   imports: [
     BrowserModule,
@@ -98,12 +96,14 @@ registerLocaleData(localePt);
     MatSidenavModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
   ],
-  providers: [{
-    provide: LOCALE_ID,
-    useValue: 'pt-BR'
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt-BR',
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

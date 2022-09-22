@@ -6,37 +6,32 @@ import { Cadastro } from '../cadastro.model';
 @Component({
   selector: 'app-cadastro-create',
   templateUrl: './cadastro-create.component.html',
-  styleUrls: ['./cadastro-create.component.css']
+  styleUrls: ['./cadastro-create.component.css'],
 })
 export class CadastroCreateComponent implements OnInit {
-
   cadastro: Cadastro = {
-    email: '',
-    cpf: '',
-    nome: '',
-    dataNasc: '',
-    telefone: ''
-  }
+    usuario: '',
+    senha: '',
+  };
 
-  constructor(private cadastroService: CadastroService, private router: Router ) { }
+  constructor(
+    private cadastroService: CadastroService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  createCadastro(): void{
+  createCadastro(): void {
     this.cadastroService.create(this.cadastro).subscribe(() => {
-    this.cadastroService.showMessege('Usuário Cadastrado!')
-    })
+      this.cadastroService.showMessage('Usuário Cadastrado!');
+    });
   }
 
-  cancelarCadastro(): void{
-    this.router.navigate([''])
-
-  }
-  
-  tabelasCadastro(): void{
-    this.router.navigate(['/cadastro/tabela'])
-
+  cancelarCadastro(): void {
+    this.router.navigate(['']);
   }
 
+  tabelasCadastro(): void {
+    this.router.navigate(['/cadastro/tabela']);
+  }
 }
